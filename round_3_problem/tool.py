@@ -2,20 +2,20 @@
 
 import os
 from groq import Groq
-from prompts.prompts import ROUND_3_APTITUDE_SYSTEM_PROMPT
+from prompts.prompts import ROUND_3
 from .parser import parse_output
 
 # Initialize Groq client
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-# Best model choices:
-# "llama-3.1-70b-versatile" -> best reasoning
-# "llama-3.1-8b-instant"   -> fastest (recommended for hackathon)
-MODEL_NAME = "llama-3.1-70b-versatile"
+# Best model choices (updated for 2026):
+# "llama-3.3-70b-versatile" -> best reasoning
+# "llama-3.1-8b-instant"    -> fastest (recommended for hackathon)
+MODEL_NAME = "llama-3.3-70b-versatile"
 
 def run_round3(state):
     messages = [
-        {"role": "system", "content": ROUND_3_APTITUDE_SYSTEM_PROMPT},
+        {"role": "system", "content": ROUND_3},
         *state["history"]
     ]
 

@@ -1,11 +1,11 @@
 # tool.py
 
-from prompts.prompts import ROUND_2_TECHNICAL_SYSTEM_PROMPT
+from prompts.prompts import ROUND_2
 from .parser import parse_output
 
 def run_round2(state, llm):
     messages = [
-        {"role": "system", "content": ROUND_2_TECHNICAL_SYSTEM_PROMPT},
+        {"role": "system", "content": ROUND_2},
         *state["history"]
     ]
 

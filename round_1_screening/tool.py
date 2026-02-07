@@ -1,6 +1,6 @@
 # tool.py
 
-from prompts.prompts import ROUND_ONE
+from prompts.prompts import ROUND_1
 from .parser import parse_output
 
 def run_round1(state, llm):
@@ -11,7 +11,7 @@ def run_round1(state, llm):
     """
 
     messages = [
-        {"role": "system", "content": ROUND_ONE},
+        {"role": "system", "content": ROUND_1},
         *state["history"]
     ]
 
